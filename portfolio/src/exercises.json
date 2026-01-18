@@ -1,0 +1,18 @@
+[
+  {
+    "id": "goblet-squat",
+    "name": "Goblet Squat",
+    "pattern": "Squat",
+    "level": "Beginner",
+    "cues": ["Hold weight at chest", "Elbows to inside of knees", "Keep heels flat"],
+    "substitute": "Air Squat"
+  },
+  {
+    "id": "barbell-bench-press",
+    "name": "Barbell Bench Press",
+    "pattern": "Push",
+    "level": "Amateur",
+    "cues": ["Eyes under the bar", "Feet planted firmly", "Control the descent"],
+    "substitute": "Dumbbell Press"
+  }
+]
