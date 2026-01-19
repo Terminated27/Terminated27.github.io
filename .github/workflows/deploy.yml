@@ -31,14 +31,13 @@ jobs:
 
       - name: Build
         run: |
-          cd portfolio
           npm install
           npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./portfolio/dist
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         id: deployment
