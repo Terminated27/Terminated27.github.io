@@ -7,7 +7,7 @@ export default function Home() {
         Welcome
       </h1>
       <p className="text-slate-400 mb-8 text-center max-w-md">
-        This is your main portfolio site. Access your custom tools below.
+        Welcome to my website :) here are some cool things you can check out
       </p>
       <Link 
         to="/workoutplan" 
