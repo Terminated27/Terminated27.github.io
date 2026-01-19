@@ -1,11 +1,6 @@
 import { useState } from 'react'
 
-// 1. Simple Placeholder Data
-const EXERCISES = [
-  { id: 1, name: "Goblet Squat", pattern: "Squat", cues: ["Chest up", "Heels down"] },
-  { id: 2, name: "Pushups", pattern: "Push", cues: ["Core tight", "Elbows at 45°"] },
-  { id: 3, name: "Pullups", pattern: "Pull", cues: ["Chest to bar", "Slow descent"] },
-];
+import exerciseData from '../exercises.json'; // Adjust path as needed
 
 function App() {
   const [selected, setSelected] = useState<string | null>(null);
@@ -21,7 +16,7 @@ function App() {
         </header>
 
         <main className="space-y-4">
-          {EXERCISES.map((ex) => (
+          {exerciseData.map((ex) => (
             <button
               key={ex.id}
               onClick={() => setSelected(ex.name === selected ? null : ex.name)}
