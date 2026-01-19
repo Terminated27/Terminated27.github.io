@@ -1,13 +1,24 @@
 name: Deploy Portfolio
 on:
   push:
-    branches: [main] # Or whatever your main branch is called
+    branches: [main]
+  workflow_dispatch: # Allows you to run it manually
+
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
+
+# Prevent multiple concurrent deployments
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 
@@ -23,12 +34,6 @@ jobs:
           cd portfolio
           npm install
           npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./portfolio/dist # Points to the built files
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
