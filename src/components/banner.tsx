@@ -33,10 +33,27 @@ const Banner = () => {
     setActiveDrawer(activeDrawer === name ? null : name);
   };
 
+  // Set CSS variable for banner height on mount and when window resizes
+  useEffect(() => {
+    const updateBannerHeight = () => {
+      if (bannerRef.current) {
+        const height = bannerRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--banner-height', `${height}px`);
+      }
+    };
+    
+    // Measure immediately
+    updateBannerHeight();
+    
+    // Re-measure on resize
+    window.addEventListener('resize', updateBannerHeight);
+    return () => window.removeEventListener('resize', updateBannerHeight);
+  }, []);
+
   return (
     <header 
       ref={bannerRef}
-      className={`w-full py-0 px-6 ${THEME.surface} border-b ${THEME.border} grid grid-cols-3 items-center sticky top-0 z-50 transition-colors duration-500`}
+      className={`w-full py-0 px-6 ${THEME.surface} border-b ${THEME.border} grid grid-cols-3 items-center sticky top-0 left-0 right-0 z-50 transition-colors duration-500`}
     >
       
       {/* LEFT SLOT: Justified Left */}
@@ -95,7 +112,7 @@ const Banner = () => {
               : 'opacity-0 translate-y-2 pointer-events-none'
           }`}>
             <div className={`${THEME.surface} border ${THEME.border} rounded-xl shadow-2xl p-4 flex flex-col gap-3 backdrop-blur-md`}>
-              <a href="/workoutlanding/splitbuilder" className={`text-[12px] uppercase tracking-widest ${THEME.secondary} hover:text-app-accent transition-colors`}>Split Builder</a>
+              <a href="/workoutlanding/workoutplan/splitbuilder" className={`text-[12px] uppercase tracking-widest ${THEME.secondary} hover:text-app-accent transition-colors`}>Split Builder</a>
               <a href="/workoutlanding/caloriecalculator" className={`text-[12px] uppercase tracking-widest ${THEME.secondary} hover:text-app-accent transition-colors`}>Calorie Calc</a>
               <a href="/workoutlanding/proteincalculator" className={`text-[12px] uppercase tracking-widest ${THEME.secondary} hover:text-app-accent transition-colors`}>Protein Calc</a>
             </div>

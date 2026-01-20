@@ -16,7 +16,7 @@ export const workoutlanding = [
       "It is important to have a goal when going to the gym. My goal is to increase my real world strength & minimizing injury, this means I focus on weightlifting, and when choosing an exercise I will emphasize RPE and compound real life adjacent lifts. This will help in situations like moving furniture or even just lugging around groceries from your car.",
       "Something to keep in mind that the best training plan is one that you personally think is fun and has you wanting to pursue fitness. As a result this is a more personalizable routine and outlines how far you should push these exercises to avoid injury and overall provide more context for your time in the gym. A plan doesn't matter if you never go to the gym in the first place, so the main focus here should be enjoyment.",
       "For beginners who don't have a background in the gym, I provide some information for your benefit in the following sections.",
-      "Otherwise you are more than welcome to skip ahead split builder",
+      "Otherwise you are more than welcome to skip ahead to the split builder",
       <Link 
         to="/workoutlanding/workoutplan/splitbuilder" 
         className={`${THEME.accent} hover:opacity-80 ${THEME.base}/20 border border-app-accent text-app-text-main font-bold py-3 px-8 rounded-full transition-all`}

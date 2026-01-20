@@ -32,3 +32,9 @@
   --shadow-app-glow: 0 0 20px 2px var(--app-glow-color);
   --radius-app-card: 1.5rem;
 }
+
+@layer base {
+  :root {
+    --app-gradient: linear-gradient(to bottom, var(--app-glow-color), rgba(0, 0, 0, 0.2), transparent);
+  }
+}
