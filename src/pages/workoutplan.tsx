@@ -125,8 +125,8 @@ const WorkoutLanding = () => {
                 {item.title}<span className={THEME.accent}>.</span>
               </h3>
 
-              {/* IMAGE SLOT */}
-              {item.image && (
+              {/* IMAGE SLOT }
+              //{item.image && (
                 <div className="mb-12 overflow-hidden rounded-app-card border border-app-accent/10 shadow-lg bg-white/5">
                    <img 
                     src={item.image} 
@@ -135,7 +135,7 @@ const WorkoutLanding = () => {
                    />
                 </div>
               )}
-              
+              */}
               <div className={`bg-app-accent/5 border-l-2 border-app-accent p-8 rounded-r-2xl mb-8`}>
                 {/* MULTI-PARAGRAPH RENDERING */}
                 {Array.isArray(item.content) ? (

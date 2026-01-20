@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom'; // Using Link for internal navigation
 import { THEME } from '../theme';
 
